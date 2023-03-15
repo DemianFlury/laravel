@@ -19,10 +19,10 @@ class ApplicationController extends Controller
         $application->save();
         return redirect('/event');
     }
-    public function list($id)
+    public function show($id)
     {
-        $applications = \App\Models\Application::where('answer', 'yes')->get();
-        $rejected = \App\Models\Application::where('answer', 'yes')->count();
+        $applications = \App\Models\Application::where('answer', 'yes')->where('event_id', $id)->get();
+        $rejected = \App\Models\Application::where('answer', 'yes')->where('event_id', $id)->count();
 
         return view('applications',[
             'applications' => $applications,
