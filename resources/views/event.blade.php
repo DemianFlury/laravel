@@ -217,6 +217,9 @@
     }
 </style>
 
+<h1>{{$event->title}}</h1><br>
+<p>{{$event->description}}</p>
+<p>Datum: {{$event->date}}</p>
 <form action="?" method="post">
     @csrf
     <input type="text" name="firstName" id="firstName" placeholder="First Name">
@@ -230,7 +233,7 @@
     <label for="no">niicht dabaii</label>
 
 
-    <button type="submit">Log In</button>
+    <button type="submit">Bestätigen</button>
 </form>
 
 <a href="/event/applications">Anmeldungen ansehen</a>

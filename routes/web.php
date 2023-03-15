@@ -16,28 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/event', function () {
-    return view('event');
-});
-Route::post('/event', function () {
-    $request = request();
-
-    $application = new \App\Models\Application();
-    $application->answer = $request->get('answer');
-    $application->first_name = $request->get('firstName');
-    $application->last_name = $request->get('lastName');
-    $application->email = $request->get('email');
-    $application->session_id = session()->getId();
-    $application->save();
-    return redirect('/event');
-});
-
-Route::get('/event/applications', function(){
-    $applications = \App\Models\Application::where('answer', 'yes')->get();
-    $rejected = \App\Models\Application::where('answer', 'yes')->count();
-
-    return view('applications',[
-        'applications' => $applications,
-        'rejected' => $rejected
-    ]);
-});
+Route::get('/event/{id}',[\App\Http\Controllers\EventController::class, 'show']);
+Route::post('/event', [\App\Http\Controllers\ApplicationController::class, 'create']);
+Route::get('/event/applications/{id}', [\App\Http\Controllers\ApplicationController::class, 'list']);

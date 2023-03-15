@@ -17,7 +17,11 @@ class ApplicationFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'answer' => $this->faker,
+            'first_name' => $this->faker,
+            'last_name' => $this->faker,
+            'email' => $this->faker->email,
+            'event_id' => $this->faker->numberBetween(1, 50)
         ];
     }
 }
