@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/event/{id}',[\App\Http\Controllers\EventController::class, 'show']);
-Route::post('/event', [\App\Http\Controllers\ApplicationController::class, 'create']);
-Route::get('/event/applications/{id}', [\App\Http\Controllers\ApplicationController::class, 'show']);
-Route::get('/events',[\App\Http\Controllers\EventController::class, 'list']);
+Route::get('/event/{id}',[\App\Http\Controllers\EventController::class, 'showEvent']);
+Route::post('/event/{id}', [\App\Http\Controllers\ApplicationController::class, 'createNewApplication']);
+Route::get('/event/{id}/applications', [\App\Http\Controllers\ApplicationController::class, 'showApplications']);
+Route::get('/events',[\App\Http\Controllers\EventController::class, 'listAllEvents']);

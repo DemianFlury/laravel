@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class ApplicationController extends Controller
 {
-    public function create($id)
+    public function createNewApplication($id)
     {
         $request = request();
 
@@ -16,10 +16,11 @@ class ApplicationController extends Controller
         $application->last_name = $request->get('lastName');
         $application->email = $request->get('email');
         $application->session_id = session()->getId();
+        $application->event_id = $id;
         $application->save();
-        return redirect('/event');
+        return redirect('/event/'. $id);
     }
-    public function show($id)
+    public function showApplications($id)
     {
         $applications = \App\Models\Application::where('answer', 'yes')->where('event_id', $id)->get();
         $rejected = \App\Models\Application::where('answer', 'yes')->where('event_id', $id)->count();

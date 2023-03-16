@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
-    public function show($id){
+    public function showEvent($id){
         $event = Event::findOrFail($id);
 
 
@@ -16,7 +16,7 @@ class EventController extends Controller
         ]);
     }
 
-    public function list(){
+    public function listAllEvents(){
         $events = Event::all();
 
         return view('events', ['events' => $events]);
