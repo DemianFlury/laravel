@@ -236,4 +236,4 @@
     <button type="submit">Bestätigen</button>
 </form>
 
-<a href="/event/applications/{{$event->id}}">Anmeldungen ansehen</a>
+<a href="/event/{{$event->id}}/applications">Anmeldungen ansehen</a>
