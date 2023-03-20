@@ -1,20 +1,26 @@
-<h1>Events</h1><br>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ asset('app.css')}}">
+</head>
 
-<table>
-    <tr>
-        <td><h1>Titel</h1></td>
-        <td><h1>Datum</h1></td>
-    </tr>
-    @foreach($events as $event)
+<div class="content">
+    <h1>Events</h1><br>
+    <table>
         <tr>
-            <td>
-                <a href="/event/{{$event->id}}">
-                    {{$event->title}}
-                </a>
-            </td>
-            <td>
-                {{$event->date}}
-            </td>
+            <th>Titel</th>
+            <th>Datum</th>
         </tr>
-    @endforeach
-</table>
+        @foreach($events as $event)
+            <tr>
+                <td>
+                    <a href="/event/{{$event->id}}">
+                        {{$event->title}}
+                    </a>
+                </td>
+                <td>
+                    {{$event->date}}
+                </td>
+            </tr>
+        @endforeach
+    </table>
+
+</div>

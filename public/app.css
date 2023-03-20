@@ -1,0 +1,129 @@
+body{
+    font-family: "Yu Gothic UI";
+    background-color: #1a202c;
+    color: #edf2f7;
+}
+
+.content{
+    width: 50%;
+    margin: auto;
+}
+
+/* Styles for the event title */
+h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+/* Styles for the event description */
+p:first-of-type {
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+
+/* Styles for the event date */
+p:nth-of-type(2) {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 24px;
+}
+/* Styles for the form */
+form{
+    width: 50%;
+}
+/* Styles for the form inputs */
+input[type="text"],
+input[type="email"],
+input[type="radio"] {
+    display: block;
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 8px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+}
+
+input[type="radio"] + label {
+    margin-left: 8px;
+}
+
+/* Styles for form error messages */
+p.error {
+    color: #f00;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+/* Styles for the submit button */
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0069d9;
+}
+
+/* Styles for the link to view applications */
+a {
+    display: block;
+    font-size: 14px;
+    color: #f2f2f2;
+    padding: 10px;
+}
+
+td a{
+    height: 100%;
+    width: 100%;
+}
+/* Styles for the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+}
+
+/* Styles for the table headers */
+th {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    text-align: left;
+    padding: 8px;
+    border: 2px solid #ddd;
+}
+
+/* Styles for the table data cells */
+td {
+    padding: 8px;
+    border: 2px solid #ddd;
+}
+
+/* Styles for the table striped rows */
+tr:nth-child(even) {
+    background-color: #2d3748;
+}
+
+/* Styles for the table hover effect */
+tr:hover {
+    background-color: #4b5563;
+}
+
+.radiodiv{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.radio{
+    width: 50% !important;
+}
