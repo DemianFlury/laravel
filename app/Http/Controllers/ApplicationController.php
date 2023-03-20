@@ -8,7 +8,12 @@ class ApplicationController extends Controller
 {
     public function createNewApplication($id)
     {
-        $request = request();
+        $request = request()->validate([
+            'firstName' => 'required',
+            'lastName' => 'required',
+            'email' => 'required|email',
+            'answer' => 'required'
+        ]);
 
         $application = new \App\Models\Application();
         $application->answer = $request->get('answer');
