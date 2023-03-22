@@ -8,7 +8,8 @@ class ApplicationController extends Controller
 {
     public function createNewApplication($id)
     {
-        $request = request()->validate([
+        $request = request();
+        $request->validate([
             'firstName' => 'required',
             'lastName' => 'required',
             'email' => 'required|email',
@@ -23,7 +24,7 @@ class ApplicationController extends Controller
         $application->session_id = session()->getId();
         $application->event_id = $id;
         $application->save();
-        return redirect('/event/'. $id);
+        return redirect('/event/'. $id)->with('answer_sent', 'Antwort wurde gesendet!');
     }
     public function showApplications($id)
     {

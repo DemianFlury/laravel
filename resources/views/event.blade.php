@@ -2,7 +2,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('app.css')}}">
 </head>
 <div class="content">
-    <h1>{{$event->title}}</h1><br>
+    <h1>{{$event->title}}</h1>
     <p>{{$event->description}}</p>
     <p>Datum: {{$event->date}}</p>
     <form action="?" method="post">
@@ -21,11 +21,11 @@
         @error('email')
         <p>{{$message}}</p>
         @enderror
-        <div class="radiodiv">
+        <div class="radio-div">
             <input type="radio" value="yes" name="answer" id="yes" class="radio">
             <label for="yes">Ja, dabei</label>
         </div>
-        <div class="radiodiv">
+        <div class="radio-div">
             <input type="radio" value="no" name="answer" id="no" class="radio">
             <label for="no">Nein, kann nicht</label>
         </div>
@@ -37,4 +37,9 @@
     </form>
 
     <a href="/event/{{$event->id}}/applications">Anmeldungen ansehen</a>
+    @if(session()->has('answer_sent'))
+        <div class="flash">
+            {{session('answer_sent')}}
+        </div>
+    @endif
 </div>
