@@ -9,4 +9,7 @@ class Application extends Model
 {
     use HasFactory;
     public $timestamps = false;
+    public function event(){
+        return $this->belongsTo(Event::class);
+    }
 }

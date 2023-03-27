@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Application;
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class ApplicationController extends Controller
@@ -28,8 +30,9 @@ class ApplicationController extends Controller
     }
     public function showApplications($id)
     {
-        $applications = \App\Models\Application::where('answer', 'yes')->where('event_id', $id)->get();
-        $rejected = \App\Models\Application::where('answer', 'yes')->where('event_id', $id)->count();
+        $applications = Application::where('event_id', $id)->where('answer', 'yes');
+        $rejected = \App\Models\Application::where('answer', 'no')->where('event_id', $id)->count();
+        // couldn't get it to work with the eloquent relationship
 
         return view('applications',[
             'applications' => $applications,
