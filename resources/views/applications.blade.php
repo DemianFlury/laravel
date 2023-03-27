@@ -1,8 +1,6 @@
 @extends('header')
 @section('content')
 
-    <div class="content">
-
         <h1>Anmeldungen</h1>
         <ul>
             @foreach($applications as $application)
@@ -11,6 +9,5 @@
         </ul>
 
         {{$rejected}} Abmeldungen
-    </div>
 
 @endsection

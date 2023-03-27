@@ -1,7 +1,7 @@
 @extends('header')
 @section('content')
 
-    <div class="content">
+
         <h1>{{$event->title}}</h1>
         <p>{{$event->description}}</p>
         <p>Datum: {{$event->date}}</p>
@@ -42,6 +42,6 @@
                 {{session('answer_sent')}}
             </div>
         @endif
-    </div>
+
 
 @endsection

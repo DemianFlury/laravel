@@ -1,7 +1,6 @@
 @extends('header')
 @section('content')
 
-    <div class="content">
         <h1>Events</h1><br>
         <table>
             <tr>
@@ -26,6 +25,5 @@
             @endforeach
         </table>
 
-    </div>
 
 @endsection
