@@ -30,7 +30,7 @@ class ApplicationController extends Controller
     }
     public function showApplications($id)
     {
-        $applications = Application::where('event_id', $id)->where('answer', 'yes');
+        $applications = Application::all()->where('event_id', $id)->where('answer', 'yes');
         $rejected = \App\Models\Application::where('answer', 'no')->where('event_id', $id)->count();
         // couldn't get it to work with the eloquent relationship
 
