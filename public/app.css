@@ -2,6 +2,7 @@ body{
     font-family: "Yu Gothic UI";
     background-color: #1a202c;
     color: #edf2f7;
+    margin: 0px;
 }
 
 .content{
@@ -132,4 +133,16 @@ tr:hover {
     background-color: limegreen;
     border-radius: 5px;
     margin: auto;
+}
+
+.header{
+    width: 100%;
+    background-color: darkblue;
+    margin: 0px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.header-img{
+    height: 50px;
 }
