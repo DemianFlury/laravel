@@ -31,6 +31,7 @@ p:nth-of-type(2) {
 }
 /* Styles for the form inputs */
 input[type="text"],
+input[type="password"],
 input[type="email"],
 input[type="radio"] {
     display: block;
@@ -131,14 +132,16 @@ tr:hover {
     margin: auto;
 }
 
-.header{
+.header, .footer{
     width: 100%;
     background-color: darkblue;
     margin: 0px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
 }
 
 .header-img{
     height: 50px;
 }
+

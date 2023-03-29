@@ -30,9 +30,8 @@ class ApplicationController extends Controller
     }
     public function showApplications($id)
     {
-        $applications = Event::findOrFail($id)->application;
-        $rejected = Event::findOrFail($id)->application->count();
-        // couldn't get it to work with the eloquent relationship
+        $applications = Event::findOrFail($id)->application->where('answer', 'yes');
+        $rejected = Event::findOrFail($id)->application->where('answer', 'no')->count();
 
         return view('applications',[
             'applications' => $applications,

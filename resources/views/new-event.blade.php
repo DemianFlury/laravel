@@ -11,7 +11,7 @@
         @error('date')
         <p>{{$message}}</p>
         @enderror
-        <input type="textarea" name="description" placeholder="Beschreibung">
+        <input type="text" name="description" placeholder="Beschreibung">
         @error('description')
         <p>{{$message}}</p>
         @enderror
