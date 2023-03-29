@@ -149,3 +149,6 @@ tr:hover {
     height: 50px;
 }
 
+.flashed{
+    display: none;
+}
