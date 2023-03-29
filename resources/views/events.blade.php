@@ -1,9 +1,9 @@
 @extends('layout')
 @section('content')
 
-    @if(session()->has('event_created'))
+    @if(session()->has('success'))
         <div class="flash">
-            {{session('event_created')}}
+            {{session('success')}}
         </div>
     @endif
 

@@ -20,7 +20,7 @@ class UserController extends Controller
         $user = \App\Models\User::create($request);
         auth()->login($user);
 
-        return redirect('/')->with('registration_success', "You've been registered" );
+        return redirect('/')->with('success', "You've been registered" );
     }
 
     public function login()
@@ -33,7 +33,7 @@ class UserController extends Controller
         if (Auth::attempt($request)) {
             request()->session()->regenerate();
 
-            return redirect()->intended('/')->with('login_success', "You've been logged in" );
+            return redirect()->intended('/')->with('success', "You've been logged in" );
         }
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
@@ -44,6 +44,6 @@ class UserController extends Controller
     {
         auth()->logout();
 
-        return redirect('/')->with('logout_success', "Goodbye" );
+        return redirect('/')->with('success', "Goodbye" );
     }
 }

@@ -35,6 +35,6 @@ class EventController extends Controller
         $event->description = $request->get('description');
         $event->date = $request->get('date');
         $event->save();
-        return redirect('/events')->with('event_created', 'Event wurde erfolgreich erstellt!');
+        return redirect('/events')->with('success', 'Event wurde erfolgreich erstellt!');
     }
 }

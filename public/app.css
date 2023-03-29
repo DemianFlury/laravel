@@ -130,6 +130,10 @@ tr:hover {
     background-color: limegreen;
     border-radius: 5px;
     margin: auto;
+    position: absolute;
+    bottom: 10px;
+    width: 300px;
+    right: 10px;
 }
 
 .header, .footer{

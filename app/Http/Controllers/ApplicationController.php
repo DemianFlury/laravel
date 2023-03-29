@@ -26,7 +26,7 @@ class ApplicationController extends Controller
         $application->session_id = session()->getId();
         $application->event_id = $id;
         $application->save();
-        return redirect('/event/'. $id)->with('answer_sent', 'Antwort wurde gesendet!');
+        return redirect('/event/'. $id)->with('success', 'Antwort wurde gesendet!');
     }
     public function showApplications($id)
     {
