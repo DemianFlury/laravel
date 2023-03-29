@@ -4,6 +4,7 @@
     <h1>Organisatierator 9000</h1>
     @auth()
         <a href="/new-event">Neues Event</a>
+        <a href="/logout">Logout</a>
     @endauth
     @guest()
         <a href="/register">Registrieren</a>
