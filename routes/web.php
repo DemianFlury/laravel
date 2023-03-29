@@ -18,3 +18,7 @@ Route::get('/event/{id}',[\App\Http\Controllers\EventController::class, 'showEve
 Route::post('/event/{id}', [\App\Http\Controllers\ApplicationController::class, 'createNewApplication']);
 Route::get('/event/{id}/applications', [\App\Http\Controllers\ApplicationController::class, 'showApplications']);
 Route::get('/events',[\App\Http\Controllers\EventController::class, 'listAllEvents']);
+Route::get('/new-event', function (){
+    return view('new-event');
+});
+Route::post('/new-event',[\App\Http\Controllers\EventController::class, 'saveNewEvent']);

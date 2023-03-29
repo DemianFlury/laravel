@@ -1,7 +1,13 @@
 @extends('header')
 @section('content')
 
-        <h1>Events</h1><br>
+    @if(session()->has('event_created'))
+        <div class="flash">
+            {{session('event_created')}}
+        </div>
+    @endif
+
+        <h1>Events</h1>
         <table>
             <tr>
                 <th>Titel</th>
