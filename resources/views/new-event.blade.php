@@ -1,4 +1,4 @@
-@extends('header')
+@extends('layout')
 @section('content')
 
     <form action="/new-event" method="post">
